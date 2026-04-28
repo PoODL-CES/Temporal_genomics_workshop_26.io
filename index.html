@@ -13,38 +13,44 @@
             color: #e2e8f0;
         }
 
-        header {
-            padding: 60px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+        /* 🎬 HERO VIDEO */
+        .hero-video {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        h1 {
+        .hero-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay text */
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .overlay-text h1 {
             font-size: 3rem;
             margin-bottom: 10px;
         }
 
-        p {
+        .overlay-text p {
             font-size: 1.2rem;
             opacity: 0.8;
         }
 
+        /* Main content */
         .container {
             padding: 40px 20px;
             max-width: 1000px;
             margin: auto;
-        }
-
-        .video-section {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        video {
-            width: 100%;
-            max-width: 800px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .card {
@@ -70,37 +76,38 @@
 
 <body>
 
-<header>
-    <h1>Temporal Genomics Workshop</h1>
-    <p>Exploring Ancient DNA, Evolution, and Bioinformatics</p>
-</header>
+<!-- 🎬 HERO VIDEO SECTION -->
+<div class="hero-video">
 
+    <video autoplay muted loop playsinline>
+        <source src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/Temporal%20Genomics%20Workshop.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay-text">
+        <h1>Temporal Genomics Workshop</h1>
+        <p>Ancient DNA • Evolution • Bioinformatics</p>
+    </div>
+
+</div>
+
+
+<!-- 📄 CONTENT -->
 <div class="container">
 
     <div class="card">
-        <h2> About the Workshop</h2>
+        <h2>About the Workshop</h2>
         <p>
             This workshop introduces participants to a reproducible pipeline which
             focuses on ancient DNA analysis, sequencing workflows, and
             evolutionary insights using modern bioinformatics tools.
         </p>
     </div>
-    <div class="intro-video">
-    
-
-    <video autoplay muted loop playsinline>
-        <source src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/Temporal%20Genomics%20Workshop.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-</div>
-
 
     <div class="card">
         <h2>What You'll Learn</h2>
         <ul>
             <li>Processing raw FASTQ data</li>
-            <li>Adapter trimming and Mapping to Reference genome</li>
+            <li>Adapter trimming and mapping to a reference genome</li>
             <li>Ancient DNA challenges & DNA damage profiling</li>
             <li>Variant calling & filtering</li>
             <li>Population genomics analysis using PCA</li>
