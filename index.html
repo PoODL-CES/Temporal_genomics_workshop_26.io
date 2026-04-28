@@ -13,9 +13,9 @@
             color: #e2e8f0;
         }
 
-        /*  VIDEO */
+        /* 🎬 VIDEO */
         .video-container {
-            padding: 40px 20px;
+            padding: 40px 20px 20px;
             text-align: center;
         }
 
@@ -26,10 +26,35 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /*  TITLE */
+        /* 🔘 POSTER BUTTON */
+        .poster-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .poster-button a {
+            text-decoration: none;
+        }
+
+        .poster-button button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #3b82f6;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .poster-button button:hover {
+            background: #2563eb;
+        }
+
+        /* 🧬 TITLE */
         .hero {
             text-align: center;
-            padding: 10px 20px 30px;
+            padding: 20px;
         }
 
         .hero h1 {
@@ -37,11 +62,12 @@
             margin-bottom: 10px;
         }
 
-        .hero p {
+        .subtitle {
             opacity: 0.7;
+            margin-bottom: 15px;
         }
 
-        /*  CONTENT */
+        /* 📄 CONTENT */
         .container {
             padding: 20px;
             max-width: 1000px;
@@ -61,7 +87,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
-        /*  TWO COLUMN */
+        /* 👩‍🔬 TWO COLUMN */
         .two-column {
             display: flex;
             gap: 20px;
@@ -71,19 +97,6 @@
         .two-column .card {
             flex: 1;
             min-width: 300px;
-        }
-
-        /*  POSTER */
-        .poster-section {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .poster-section img {
-            width: 100%;
-            max-width: 700px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         footer {
@@ -96,23 +109,31 @@
 
 <body>
 
-<!--  VIDEO FIRST -->
+<!-- 🎬 VIDEO -->
 <div class="video-container">
     <video autoplay muted loop playsinline controls>
         <source src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/Temporal%20Genomics%20Workshop.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
+    <!-- 🔘 BUTTON RIGHT BELOW VIDEO -->
+    <div class="poster-button">
+        <a href="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" target="_blank">
+            <button>View Workshop Poster</button>
+        </a>
+    </div>
 </div>
 
-<!--  TITLE -->
+<!-- 🧬 TITLE -->
 <div class="hero">
-    <h1>Temporal Population Genomics</h1>
-    <p>A short workshop on laboratory and analysis methods</p>
+    <h1>Temporal Genomics Workshop</h1>
+    <p class="subtitle">Ancient DNA • Evolution • Bioinformatics</p>
+
     <h2>9th – 12th May, 2026</h2>
     <p>Raspuri, NCBS, TIFR</p>
 </div>
 
-<!--  ABOUT -->
+<!-- 📖 ABOUT -->
 <div class="container">
 
     <div class="card">
@@ -128,7 +149,7 @@
 
 </div>
 
-<!--  PEOPLE -->
+<!-- 👩‍🔬 PEOPLE -->
 <div class="container two-column">
 
     <div class="card">
@@ -154,7 +175,6 @@
     </div>
 
 </div>
-
 
 <footer>
     <p>© 2026 Temporal Genomics Workshop</p>
