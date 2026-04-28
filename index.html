@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>lab Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporal Genomics Workshop</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .video-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            opacity: 0.6;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello,this ia a prototype </h1>
-    <p>This is it.</p>
+
+<header>
+    <h1>Temporal Genomics Workshop</h1>
+    <p>Exploring Ancient DNA, Evolution, and Bioinformatics</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🧬 About the Workshop</h2>
+        <p>
+            This workshop introduces participants to temporal genomics,
+            focusing on ancient DNA analysis, sequencing workflows, and
+            evolutionary insights using modern bioinformatics tools.
+        </p>
+    </div>
+
+    <div class="video-section">
+        <h2>🎥 Introduction Video</h2>
+
+        <video controls>
+            <source src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/Temporal%20Genomics%20Workshop.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+    </div>
+
+    <div class="card">
+        <h2>📚 What You'll Learn</h2>
+        <ul>
+            <li>Processing raw FASTQ data</li>
+            <li>Ancient DNA challenges & damage patterns</li>
+            <li>Alignment using BWA</li>
+            <li>Variant calling & filtering</li>
+            <li>Population genomics analysis</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Temporal Genomics Workshop</p>
+</footer>
+
 </body>
 </html>
