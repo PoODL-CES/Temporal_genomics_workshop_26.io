@@ -13,7 +13,7 @@
             color: #e2e8f0;
         }
 
-        /* 🎬 Video Section */
+        /* 🎬 VIDEO */
         .video-container {
             padding: 40px 20px 10px;
             text-align: center;
@@ -26,21 +26,35 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* 🧬 Title */
-        .main-title {
+        /* 🧬 HERO TEXT */
+        .hero {
             text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
             font-size: 2.5rem;
-            margin-top: 20px;
+            margin-bottom: 10px;
         }
 
-        .subtitle {
-            text-align: center;
-            font-size: 1.1rem;
+        .hero p {
             opacity: 0.7;
-            margin-bottom: 30px;
         }
 
-        /* 📄 Content */
+        /* 🖼️ POSTER IMAGE */
+        .poster {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .poster img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            opacity: 0.9;
+        }
+
+        /* 📄 CONTENT */
         .container {
             padding: 20px;
             max-width: 1000px;
@@ -60,6 +74,18 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
+        /* 👩‍🔬 TWO COLUMN */
+        .two-column {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .two-column .card {
+            flex: 1;
+            min-width: 300px;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -70,7 +96,7 @@
 
 <body>
 
-<!-- 🎬 VIDEO FIRST -->
+<!-- 🎬 VIDEO -->
 <div class="video-container">
     <video autoplay muted loop playsinline controls>
         <source src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/Temporal%20Genomics%20Workshop.mp4" type="video/mp4">
@@ -78,29 +104,57 @@
     </video>
 </div>
 
-<!-- 🧬 TITLE + INTRO -->
-<div class="container">
+<!-- 🧬 TITLE -->
+<div class="hero">
+    <h1>Temporal Population Genomics</h1>
+    <p>A short workshop on laboratory and analysis methods</p>
 
-    <h1 class="main-title">Temporal Genomics Workshop</h1>
-    <p class="subtitle">Ancient DNA • Evolution • Bioinformatics</p>
+    <h2>9th – 12th May, 2026</h2>
+    <p>Raspuri, NCBS, TIFR</p>
+</div>
+
+<!-- 🖼️ POSTER -->
+<div class="poster">
+    <img src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" alt="Workshop Poster">
+</div>
+
+<!-- 📖 ABOUT -->
+<div class="container">
 
     <div class="card">
         <h2>About the Workshop</h2>
         <p>
-            This workshop introduces participants to a reproducible pipeline which
-            focuses on ancient DNA analysis, sequencing workflows, and
-            evolutionary insights using modern bioinformatics tools.
+            Ancient and historical DNA studies are redefining our understanding of the past.
+            These studies are very exciting, but require very careful labwork and analyses.
+            For the first time in India, we present an opportunity to understand more.
+            Are these approaches right for your question? Can you implement them?
+            Come meet international experts in ancient DNA research and find out.
         </p>
     </div>
 
+</div>
+
+<!-- 👩‍🔬 PEOPLE -->
+<div class="container two-column">
+
     <div class="card">
-        <h2>What You'll Learn</h2>
+        <h2>Instructors</h2>
         <ul>
-            <li>Processing raw FASTQ data</li>
-            <li>Adapter trimming and mapping to a reference genome</li>
-            <li>Ancient DNA challenges & DNA damage profiling</li>
-            <li>Variant calling & filtering</li>
-            <li>Population genomics analysis using PCA</li>
+            <li>Katerina Guschanski, University of Edinburgh</li>
+            <li>Niraj Rai, Birbal Sahani Institute of Paleobotony</li>
+            <li>Kritika M Garg, IISER Mohali</li>
+            <li>Anubhab Khan, IISc</li>
+            <li>German Hernandez Alonso, University of Edinburgh</li>
+            <li>Priya Moorjani (online), UC Berkeley</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Organizers</h2>
+        <ul>
+            <li>Uma Ramakrishnan, NCBS</li>
+            <li>Kritika M Garg, IISER Mohali</li>
+            <li>Anubhab Khan, IISc</li>
         </ul>
     </div>
 
