@@ -15,7 +15,7 @@
 
         /* 🎬 VIDEO */
         .video-container {
-            padding: 40px 20px 10px;
+            padding: 40px 20px;
             text-align: center;
         }
 
@@ -26,10 +26,10 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* 🧬 HERO TEXT */
+        /* 🧬 TITLE */
         .hero {
             text-align: center;
-            padding: 20px;
+            padding: 10px 20px 30px;
         }
 
         .hero h1 {
@@ -39,19 +39,6 @@
 
         .hero p {
             opacity: 0.7;
-        }
-
-        /* 🖼️ POSTER IMAGE */
-        .poster {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .poster img {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 12px;
-            opacity: 0.9;
         }
 
         /* 📄 CONTENT */
@@ -86,6 +73,19 @@
             min-width: 300px;
         }
 
+        /* 🖼️ POSTER */
+        .poster-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .poster-section img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -96,7 +96,7 @@
 
 <body>
 
-<!-- 🎬 VIDEO -->
+<!-- 🎬 VIDEO FIRST -->
 <div class="video-container">
     <video autoplay muted loop playsinline controls>
         <source src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/Temporal%20Genomics%20Workshop.mp4" type="video/mp4">
@@ -108,14 +108,8 @@
 <div class="hero">
     <h1>Temporal Population Genomics</h1>
     <p>A short workshop on laboratory and analysis methods</p>
-
     <h2>9th – 12th May, 2026</h2>
     <p>Raspuri, NCBS, TIFR</p>
-</div>
-
-<!-- 🖼️ POSTER -->
-<div class="poster">
-    <img src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" alt="Workshop Poster">
 </div>
 
 <!-- 📖 ABOUT -->
@@ -158,6 +152,12 @@
         </ul>
     </div>
 
+</div>
+
+<!-- 🖼️ POSTER (SEPARATE SECTION) -->
+<div class="poster-section">
+    <h2>Workshop Poster</h2>
+    <img src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" alt="Workshop Poster">
 </div>
 
 <footer>
