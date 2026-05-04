@@ -13,7 +13,7 @@ body {
     color: #e2e8f0;
 }
 
-/* 🔝 NAVBAR */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: center;
@@ -23,17 +23,14 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 0 10px rgba(59,130,246,0.2);
 }
 
 .navbar a, .dropbtn {
     color: #e2e8f0;
     text-decoration: none;
-    font-weight: 500;
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
 }
 
 .navbar a:hover, .dropbtn:hover {
@@ -51,17 +48,11 @@ body {
     background-color: #1e293b;
     min-width: 220px;
     border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .dropdown-content a {
     display: block;
-    padding: 12px;
-    color: #e2e8f0;
-}
-
-.dropdown-content a:hover {
-    background: #334155;
+    padding: 10px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -71,59 +62,45 @@ body {
 /* HERO */
 .hero {
     text-align: center;
-    padding: 60px 20px 30px;
-}
-
-.hero h1 {
-    font-size: 2.8rem;
-}
-
-.subtitle {
-    opacity: 0.7;
-}
-
-.intro {
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.6;
-}
-
-/* BUTTON */
-.poster-button {
-    margin-top: 25px;
+    padding: 60px 20px;
 }
 
 .poster-button button {
-    padding: 12px 25px;
+    padding: 10px 20px;
+    background: #3b82f6;
     border: none;
     border-radius: 8px;
-    background: #3b82f6;
     color: white;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(59,130,246,0.5);
 }
 
 /* CONTENT */
 .container {
-    padding: 20px;
     max-width: 1000px;
     margin: auto;
+    padding: 20px;
 }
 
 .card {
     background: #1e293b;
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 30px;
-    border: 1px solid rgba(59,130,246,0.2);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
-h3 {
-    color: #3b82f6;
+h3 { color: #3b82f6; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-ul {
-    line-height: 1.6;
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    background: #020617;
 }
 
 /* TWO COLUMN */
@@ -135,54 +112,42 @@ ul {
 
 .two-column .card {
     flex: 1;
-    min-width: 300px;
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    opacity: 0.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🔝 NAVBAR -->
+<!-- NAVBAR -->
 <div class="navbar">
     <a href="#about">About</a>
     <a href="#getting-there">Getting There</a>
     <a href="#schedule">Schedule</a>
     <a href="#poster">Workshop Poster</a>
 
-    <div class="dropdown-content">
-    <a href="#resources">Facilities</a>
-
-    <a href="https://github.com/PoODL-CES/Temporal_genomics" target="_blank">
-        Workshop Material (GitHub)
-    </a>
-
-    <a href="YOUR_COLAB_LINK" target="_blank">
-        Run on Google Colab
-    </a>
-
-    <a href="#">Datasets (coming soon)</a>
+    <div class="dropdown">
+        <button class="dropbtn">Workshop Resources ▾</button>
+        <div class="dropdown-content">
+            <a href="#resources">Facilities</a>
+            <a href="https://github.com/PoODL-CES/Temporal_genomics" target="_blank">Workshop Material (GitHub)</a>
+            <a href="#">Run on Google Colab</a>
+            <a href="#">Datasets (coming soon)</a>
+        </div>
+    </div>
 </div>
-<!--  HERO / INTRO -->
+
+<!-- HERO -->
 <div class="hero">
     <h1>Temporal Genomics Workshop</h1>
-    <p class="subtitle">Ancient DNA • Evolution • Bioinformatics</p>
-
+    <p>Ancient DNA • Evolution • Bioinformatics</p>
     <h2>9th – 12th May, 2026</h2>
-    <p>Raspuri, NCBS, TIFR</p>
+    <p>NCBS, Bangalore</p>
 
-    <p class="intro">
-        Explore the rapidly evolving field of temporal genomics through this hands-on workshop.
-        Participants will learn cutting-edge techniques in ancient DNA analysis, sequencing workflows,
-        and bioinformatics pipelines, with a strong focus on reproducibility and evolutionary insights.
-    </p>
-
-    <!--  POSTER BUTTON -->
     <div class="poster-button" id="poster">
         <a href="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" target="_blank">
             <button>View Workshop Poster</button>
@@ -190,195 +155,72 @@ footer {
     </div>
 </div>
 
-<!--  ABOUT -->
+<!-- ABOUT -->
 <div class="container" id="about">
     <div class="card">
-        <h2>About the Workshop</h2>
-        <p>
-            Ancient and historical DNA studies are redefining our understanding of the past.
-            These studies are very exciting, but require very careful labwork and analyses.
-            This workshop introduces participants to a reproducible pipeline focused on 
-            ancient DNA analysis, sequencing workflows, and evolutionary insights using modern bioinformatics tools.
-        </p>
+        <h2>About</h2>
+        <p>Hands-on training in temporal genomics and ancient DNA analysis.</p>
 
-        <!--  PREREQUISITES -->
-        <h3 style="margin-top: 25px;">Prerequisites</h3>
+        <h3>Prerequisites</h3>
         <ul>
-            <li>Access to a Google Colab account</li>
-            <li>A personal laptop (mandatory for hands-on sessions)</li>
-            <li>Laptop charging cable</li>
-            <li>Basic familiarity with command-line tools (recommended but not mandatory)</li>
+            <li>Google Colab</li>
+            <li>Laptop + charger</li>
+            <li>Basic command line knowledge</li>
         </ul>
     </div>
 </div>
 
+<!-- GETTING THERE -->
 <div class="container" id="getting-there">
     <div class="card">
         <h2>Getting There</h2>
-
-        <p>
-            The workshop will be held at <b>National Centre for Biological Sciences (NCBS), Bangalore</b>.
-        </p>
-
-        <h3>Campus Entry</h3>
-        <ul>
-            <li>Enter through the NCBS main gate and show your confirmation email</li>
-            <li>Carry a government-issued ID for verification</li>
-            <li>Security personnel will guide you if needed</li>
-        </ul>
-
-        <h3>Travel Instructions</h3>
-        <p><b>By Train:</b> Take a prepaid auto or cab to NCBS, GKVK, Bellary Road.</p>
-
-        <p><b>By Airport:</b></p>
-        <ul>
-            <li>Use cab services or prepaid airport taxis</li>
-            <li>Take Vayu Vajra airport bus and get down at <b>GKVK Bus Stop</b></li>
-            <li>NCBS campus is across the road</li>
-        </ul>
+        <p>NCBS, Bangalore</p>
     </div>
 </div>
 
+<!-- SCHEDULE -->
 <div class="container" id="schedule">
     <div class="card">
-       <div class="container" id="schedule">
-    <div class="card">
-        <h2>Workshop Schedule</h2>
+        <h2>Schedule</h2>
 
-        <!-- DAY 1 -->
-        <h3>9th May – Open Day on Temporal Population Genomics</h3>
+        <h3>9th May</h3>
         <table>
-            <tr>
-                <th>Time</th><th>Session</th>
-            </tr>
-            <tr><td>9:00 – 11:00</td><td>Short research talks</td></tr>
-            <tr><td>11:00 – 11:30</td><td>Tea/Coffee Break</td></tr>
-            <tr><td>11:30 – 1:00</td><td>Poor DNA in old samples: how do you collect it?</td></tr>
-            <tr><td>1:00 – 2:00</td><td>Lunch</td></tr>
-            <tr><td>2:00 – 3:30</td><td>DNA degrades over time: how do you analyse it?</td></tr>
-            <tr><td>3:30 – 4:00</td><td>Tea/Coffee Break</td></tr>
-            <tr><td>4:00 – 5:30</td><td>What can we learn from these data?</td></tr>
-            <tr><td>6:00 – 7:00</td><td>Lab walkthrough & discussion</td></tr>
-            <tr><td>7:00 – 8:00</td><td>Dinner</td></tr>
+            <tr><th>Time</th><th>Session</th></tr>
+            <tr><td>9:00–11:00</td><td>Short talks</td></tr>
+            <tr><td>11:30–1:00</td><td>DNA collection</td></tr>
         </table>
 
-        <!-- DAY 2 -->
         <h3>10th May</h3>
         <table>
-            <tr>
-                <th>Time</th><th>Session</th>
-            </tr>
-            <tr><td>9:00 – 11:00</td><td>Hands-on sampling</td></tr>
-            <tr><td>11:00 – 11:30</td><td>Tea/Coffee Break</td></tr>
-            <tr><td>11:30 – 1:00</td><td>Extraction setup</td></tr>
-            <tr><td>1:00 – 2:00</td><td>Lunch</td></tr>
-            <tr><td>2:00 – 3:30</td><td>Extraction</td></tr>
-            <tr><td>3:30 – 4:00</td><td>Tea/Coffee Break</td></tr>
-            <tr><td>4:00 – 5:30</td><td>Qiagen chat corner & participant flash talks</td></tr>
-            <tr><td>6:00 – 7:00</td><td>Participant flash talks</td></tr>
-            <tr><td>7:00 – 8:00</td><td>Dinner</td></tr>
-            <tr><td>8:00 – 9:00</td><td>Refresher on Linux</td></tr>
+            <tr><th>Time</th><th>Session</th></tr>
+            <tr><td>9:00–11:00</td><td>Sampling</td></tr>
         </table>
-
-        <!-- DAY 3 -->
-        <h3>11th May</h3>
-        <table>
-            <tr>
-                <th>Time</th><th>Session</th>
-            </tr>
-            <tr><td>9:00 – 11:00</td><td>Priya Moorjani talk</td></tr>
-            <tr><td>11:00 – 11:30</td><td>Tea/Coffee Break</td></tr>
-            <tr><td>11:30 – 1:00</td><td>Finish extractions</td></tr>
-            <tr><td>1:00 – 2:00</td><td>Lunch</td></tr>
-            <tr><td>2:00 – 3:30</td><td>Library preparation</td></tr>
-            <tr><td>3:30 – 4:00</td><td>Tea/Coffee Break</td></tr>
-            <tr><td>4:00 – 5:30</td><td>Pre-processing & authentication</td></tr>
-            <tr><td>6:00 – 7:00</td><td>Pre-processing & authentication</td></tr>
-            <tr><td>7:00 – 8:00</td><td>Dinner</td></tr>
-        </table>
-
-        <!-- DAY 4 -->
-        <h3>12th May</h3>
-        <table>
-            <tr>
-                <th>Time</th><th>Session</th>
-            </tr>
-            <tr><td>9:00 – 11:00</td><td>Ancient mitogenomes</td></tr>
-            <tr><td>11:00 – 11:30</td><td>Tea/Coffee Break</td></tr>
-            <tr><td>11:30 – 1:00</td><td>SNP calling</td></tr>
-            <tr><td>1:00 – 2:00</td><td>Lunch</td></tr>
-            <tr><td>2:00 – 3:30</td><td>Population genetics with ancient data</td></tr>
-            <tr><td>3:30 – 4:00</td><td>Tea/Coffee Break</td></tr>
-            <tr><td>4:00 – 5:30</td><td>Population genetics with ancient data</td></tr>
-            <tr><td>6:00 – 7:00</td><td>Debrief & departure</td></tr>
-        </table>
-
     </div>
 </div>
-</div>
+
+<!-- RESOURCES -->
 <div class="container" id="resources">
     <div class="card">
-        <h2>Workshop Resources & Facilities</h2>
-
-        <h3>Facilities Available</h3>
-        <ul>
-            <li>WiFi access (available at registration desk)</li>
-            <li>Medical support (contact NCBS Reception)</li>
-            <li>Laundry services (via Guest House)</li>
-            <li>Gym, swimming pool, and sports complex (with badge)</li>
-        </ul>
-
-        <h3>Food Arrangements</h3>
-        <p>
-            Breakfast and lunch will be provided at the NCBS Main Canteen.
-            Dinner is provided on all workshop days except May 12.
-        </p>
-
-        <h3>Important Guidelines</h3>
-        <ul>
-            <li>Wear your name badge at all times</li>
-            <li>Follow NCBS anti-harassment policy</li>
-            <li>Return name tags after the event</li>
-            <li>Bring reusable water bottles (sustainability initiative)</li>
-        </ul>
-
-        <h3>Emergency Contacts</h3>
-        <p>
-            NCBS Reception (24/7): (080) 2366 6001/02/18/19<br>
-            Meetings Office: +91-80-23666337
-        </p>
+        <h2>Resources</h2>
+        <p>WiFi, facilities, etc.</p>
     </div>
 </div>
 
-<!--  PEOPLE -->
+<!-- PEOPLE -->
 <div class="container two-column">
-
     <div class="card">
         <h2>Instructors</h2>
-        <ul>
-            <li>Katerina Guschanski</li>
-            <li>Niraj Rai</li>
-            <li>Kritika M Garg</li>
-            <li>Anubhab Khan</li>
-            <li>German Hernandez Alonso</li>
-            <li>Priya Moorjani (online)</li>
-        </ul>
+        <ul><li>Katerina</li></ul>
     </div>
 
     <div class="card">
         <h2>Organizers</h2>
-        <ul>
-            <li>Uma Ramakrishnan</li>
-            <li>Kritika M Garg</li>
-            <li>Anubhab Khan</li>
-            <li>Devkant Singha</li>
-        </ul>
+        <ul><li>Uma</li></ul>
     </div>
-
 </div>
 
 <footer>
-    <p>© 2026 Temporal Genomics Workshop</p>
+<p>© 2026 Workshop</p>
 </footer>
 
 </body>
