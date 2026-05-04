@@ -1,128 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporal Genomics Workshop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temporal Genomics Workshop</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
 
-        /*  NAVBAR */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            background: #020617;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/*  NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #020617;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .navbar a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
+.navbar a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
-        .navbar a:hover {
-            color: #3b82f6;
-        }
+.navbar a:hover {
+    color: #3b82f6;
+}
 
-        /*  HERO */
-        .hero {
-            text-align: center;
-            padding: 60px 20px 30px;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
 
-        .subtitle {
-            opacity: 0.7;
-            margin-bottom: 20px;
-        }
+.subtitle {
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
 
-        .intro {
-            max-width: 800px;
-            margin: auto;
-            opacity: 0.85;
-            line-height: 1.6;
-        }
+.intro {
+    max-width: 800px;
+    margin: auto;
+    opacity: 0.85;
+    line-height: 1.6;
+}
 
-        /*  BUTTON */
-        .poster-button {
-            text-align: center;
-            margin-top: 25px;
-        }
+/* BUTTON */
+.poster-button {
+    text-align: center;
+    margin-top: 25px;
+}
 
-        .poster-button button {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            background: #3b82f6;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.poster-button button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .poster-button button:hover {
-            background: #2563eb;
-        }
+.poster-button button:hover {
+    background: #2563eb;
+}
 
-        /*  CONTENT */
-        .container {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+/* CONTENT */
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
 
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 30px;
-            transition: 0.3s;
-        }
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 30px;
+    transition: 0.3s;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
 
-        /*  TWO COLUMN */
-        .two-column {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+/* TABS */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
 
-        .two-column .card {
-            flex: 1;
-            min-width: 300px;
-        }
+.tab-button {
+    padding: 10px 15px;
+    border: none;
+    background: #334155;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            opacity: 0.6;
-        }
-    </style>
+.tab-button.active {
+    background: #3b82f6;
+}
+
+.tab-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* TWO COLUMN */
+.two-column {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.two-column .card {
+    flex: 1;
+    min-width: 300px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
+}
+</style>
+
+<script>
+function openTab(day) {
+    let contents = document.querySelectorAll(".tab-content");
+    let buttons = document.querySelectorAll(".tab-button");
+
+    contents.forEach(c => c.classList.remove("active"));
+    buttons.forEach(b => b.classList.remove("active"));
+
+    document.getElementById(day).classList.add("active");
+    document.getElementById(day + "-btn").classList.add("active");
+}
+</script>
+
 </head>
 
 <body>
 
-<!--  NAVBAR -->
+<!-- NAVBAR -->
 <div class="navbar">
     <a href="#about">About</a>
     <a href="#getting-there">Getting There</a>
@@ -135,7 +178,7 @@
     </a>
 </div>
 
-<!--  HERO / INTRO -->
+<!-- HERO -->
 <div class="hero">
     <h1>Temporal Genomics Workshop</h1>
     <p class="subtitle">Ancient DNA • Evolution • Bioinformatics</p>
@@ -149,7 +192,6 @@
         and bioinformatics pipelines, with a strong focus on reproducibility and evolutionary insights.
     </p>
 
-    <!--  POSTER BUTTON -->
     <div class="poster-button" id="poster">
         <a href="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" target="_blank">
             <button>View Workshop Poster</button>
@@ -157,7 +199,7 @@
     </div>
 </div>
 
-<!--  ABOUT -->
+<!-- ABOUT -->
 <div class="container" id="about">
     <div class="card">
         <h2>About the Workshop</h2>
@@ -168,7 +210,6 @@
             ancient DNA analysis, sequencing workflows, and evolutionary insights using modern bioinformatics tools.
         </p>
 
-        <!--  PREREQUISITES -->
         <h3 style="margin-top: 25px;">Prerequisites</h3>
         <ul>
             <li>Access to a Google Colab account</li>
@@ -179,116 +220,92 @@
     </div>
 </div>
 
+<!-- GETTING THERE -->
 <div class="container" id="getting-there">
     <div class="card">
         <h2>Getting There</h2>
-
         <p>
             The workshop will be held at <b>National Centre for Biological Sciences (NCBS), Bangalore</b>.
         </p>
-
-        <h3>Campus Entry</h3>
-        <ul>
-            <li>Enter through the NCBS main gate and show your confirmation email</li>
-            <li>Carry a government-issued ID for verification</li>
-            <li>Security personnel will guide you if needed</li>
-        </ul>
-
-        <h3>Travel Instructions</h3>
-        <p><b>By Train:</b> Take a prepaid auto or cab to NCBS, GKVK, Bellary Road.</p>
-
-        <p><b>By Airport:</b></p>
-        <ul>
-            <li>Use cab services or prepaid airport taxis</li>
-            <li>Take Vayu Vajra airport bus and get down at <b>GKVK Bus Stop</b></li>
-            <li>NCBS campus is across the road</li>
-        </ul>
     </div>
 </div>
 
+<!-- SCHEDULE -->
 <div class="container" id="schedule">
     <div class="card">
         <h2>Schedule</h2>
 
         <p><b>Workshop Dates:</b> May 9 – 12, 2026</p>
 
-        <h3>Registration</h3>
-        <p>Starts at 8:00 AM on May 9 at NCBS Reception</p>
+        <!-- TABS -->
+        <div class="tabs">
+            <button class="tab-button active" id="day1-btn" onclick="openTab('day1')">9th May</button>
+            <button class="tab-button" id="day2-btn" onclick="openTab('day2')">10th May</button>
+            <button class="tab-button" id="day3-btn" onclick="openTab('day3')">11th May</button>
+            <button class="tab-button" id="day4-btn" onclick="openTab('day4')">12th May</button>
+        </div>
 
-        <h3>Session Timings</h3>
-        <p>9:00 AM – 7:00 PM at Raspuri Hall (near Southern Laboratory Complex)</p>
+        <!-- DAY 1 -->
+        <div id="day1" class="tab-content active">
+            9:00-11:00 Short research talks<br>
+            11-11:30 tea/coffee<br>
+            11:30-1 pm Poor DNA in old samples: how do you collect it?<br>
+            Lunch<br>
+            2-3:30 pm DNA degrades over time: how do you analyse it?<br>
+            3:30-4 tea/coffee<br>
+            4-5:30 What can we learn from these data?<br>
+            6-7 pm Lab walk through and discussion<br>
+            7-8 pm dinner
+        </div>
 
-        <h3>Meal Timings</h3>
-        <ul>
-            <li>Breakfast: 08:30 – 09:30 AM</li>
-            <li>Lunch: 12:45 – 01:45 PM</li>
-            <li>Dinner: 07:15 – 08:30 PM (except May 12)</li>
-        </ul>
+        <!-- DAY 2 -->
+        <div id="day2" class="tab-content">
+            9:00-11:00 Hands on sampling<br>
+            11-11:30 tea/coffee<br>
+            11:30-1 pm extraction set up<br>
+            Lunch<br>
+            2-3:30 pm extraction<br>
+            3:30-4 tea/coffee<br>
+            4-5:30 Qiagen chat corner, participant flash talks<br>
+            6-7 pm participant flash talks<br>
+            7-8 pm dinner<br>
+            8-9 pm refresher on Linux
+        </div>
 
-        <p>
-            A detailed day-wise schedule will be shared with participants.
-        </p>
+        <!-- DAY 3 -->
+        <div id="day3" class="tab-content">
+            9:00-11:00 Priya Moorjani talk<br>
+            11-11:30 tea/coffee<br>
+            11:30-1 pm finish extractions<br>
+            Lunch<br>
+            2-3:30 pm library prep<br>
+            3:30-4 tea/coffee<br>
+            4-5:30 pre-processing and authentification<br>
+            6-7 pm pre-processing and authentification<br>
+            7-8 pm dinner
+        </div>
+
+        <!-- DAY 4 -->
+        <div id="day4" class="tab-content">
+            9:00-11:00 ancinet mitogenomes<br>
+            11-11:30 tea/coffee<br>
+            11:30-1 pm SNP calling<br>
+            Lunch<br>
+            2-3:30 pm Population genetics with ancient data<br>
+            3:30-4 tea/coffee<br>
+            4-5:30 Population genetics with ancient data<br>
+            6-7 pm debrief and depart<br>
+            7-8 pm dinner
+        </div>
+
     </div>
 </div>
+
+<!-- RESOURCES -->
 <div class="container" id="resources">
     <div class="card">
         <h2>Workshop Resources & Facilities</h2>
-
-        <h3>Facilities Available</h3>
-        <ul>
-            <li>WiFi access (available at registration desk)</li>
-            <li>Medical support (contact NCBS Reception)</li>
-            <li>Laundry services (via Guest House)</li>
-            <li>Gym, swimming pool, and sports complex (with badge)</li>
-        </ul>
-
-        <h3>Food Arrangements</h3>
-        <p>
-            Breakfast and lunch will be provided at the NCBS Main Canteen.
-            Dinner is provided on all workshop days except May 12.
-        </p>
-
-        <h3>Important Guidelines</h3>
-        <ul>
-            <li>Wear your name badge at all times</li>
-            <li>Follow NCBS anti-harassment policy</li>
-            <li>Return name tags after the event</li>
-            <li>Bring reusable water bottles (sustainability initiative)</li>
-        </ul>
-
-        <h3>Emergency Contacts</h3>
-        <p>
-            NCBS Reception (24/7): (080) 2366 6001/02/18/19<br>
-            Meetings Office: +91-80-23666337
-        </p>
     </div>
-</div>
-
-<!--  PEOPLE -->
-<div class="container two-column">
-
-    <div class="card">
-        <h2>Instructors</h2>
-        <ul>
-            <li>Katerina Guschanski</li>
-            <li>Niraj Rai</li>
-            <li>Kritika M Garg</li>
-            <li>Anubhab Khan</li>
-            <li>German Hernandez Alonso</li>
-            <li>Priya Moorjani (online)</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Organizers</h2>
-        <ul>
-            <li>Uma Ramakrishnan</li>
-            <li>Kritika M Garg</li>
-            <li>Anubhab Khan</li>
-            <li>Devkant Singha</li>
-        </ul>
-    </div>
-
 </div>
 
 <footer>
