@@ -36,6 +36,47 @@ body {
     color: #3b82f6;
 }
 
+    }
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #020617;
+    min-width: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    z-index: 1001;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 15px;
+    color: #e2e8f0;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #1e293b;
+    color: #3b82f6;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 /* HERO */
 .hero {
     text-align: center;
@@ -177,10 +218,10 @@ function openTab(day) {
     <div class="dropdown">
         <a href="#">Workshop Material ▾</a>
         <div class="dropdown-content">
-            <a href="#" target="_blank">Linux Basic Exercise</a>
-            <a href="#" target="_blank">Linux Advanced Exercise</a>
-            <a href="#" target="_blank">Google Colab</a>
-            <a href="#" target="_blank">Answer Key</a>
+            <a href="https://poodl-ces.github.io/PoODL_NGS_workshop.io/linux_basics.html" target="_blank">Linux Basic Exercise</a>
+            <a href="https://poodl-ces.github.io/PoODL_NGS_workshop.io/linux_advance.html" target="_blank">Linux Advanced Exercise</a>
+            <a href="https://github.com/PoODL-CES/Temporal_genomics/blob/main/TGW_2026.ipynb" target="_blank">Google Colab</a>
+            <a href="#">Answer Key</a>
         </div>
     </div>
 
