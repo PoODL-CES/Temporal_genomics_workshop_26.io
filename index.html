@@ -22,7 +22,6 @@ body {
     padding: 15px;
     position: sticky;
     top: 0;
-    z-index: 1000;
 }
 
 .navbar a, .dropbtn {
@@ -31,10 +30,6 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-}
-
-.navbar a:hover, .dropbtn:hover {
-    color: #3b82f6;
 }
 
 /* DROPDOWN */
@@ -65,14 +60,6 @@ body {
     padding: 60px 20px;
 }
 
-.poster-button button {
-    padding: 10px 20px;
-    background: #3b82f6;
-    border: none;
-    border-radius: 8px;
-    color: white;
-}
-
 /* CONTENT */
 .container {
     max-width: 1000px;
@@ -87,8 +74,7 @@ body {
     border-radius: 10px;
 }
 
-h3 { color: #3b82f6; }
-
+/* TABLE */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -99,24 +85,23 @@ th, td {
     border-bottom: 1px solid #334155;
 }
 
-th {
-    background: #020617;
+/* TABS */
+.tabs {
+    margin-bottom: 15px;
 }
 
-/* TWO COLUMN */
-.two-column {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+.tab-btn {
+    padding: 8px 15px;
+    margin-right: 5px;
+    border: none;
+    background: #334155;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
 }
 
-.two-column .card {
-    flex: 1;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
+.tab-btn.active {
+    background: #3b82f6;
 }
 </style>
 </head>
@@ -132,10 +117,19 @@ footer {
 
     <div class="dropdown">
         <button class="dropbtn">Workshop Resources ▾</button>
+
         <div class="dropdown-content">
             <a href="#resources">Facilities</a>
-            <a href="https://github.com/PoODL-CES/Temporal_genomics" target="_blank">Workshop Material (GitHub)</a>
-            <a href="#">Run on Google Colab</a>
+
+            <!-- YOUR LINK -->
+            <a href="https://github.com/PoODL-CES/Temporal_genomics" target="_blank">
+                Workshop Material (GitHub)
+            </a>
+
+            <a href="YOUR_COLAB_LINK" target="_blank">
+                Run on Google Colab
+            </a>
+
             <a href="#">Datasets (coming soon)</a>
         </div>
     </div>
@@ -144,84 +138,69 @@ footer {
 <!-- HERO -->
 <div class="hero">
     <h1>Temporal Genomics Workshop</h1>
-    <p>Ancient DNA • Evolution • Bioinformatics</p>
-    <h2>9th – 12th May, 2026</h2>
-    <p>NCBS, Bangalore</p>
-
-    <div class="poster-button" id="poster">
-        <a href="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" target="_blank">
-            <button>View Workshop Poster</button>
-        </a>
-    </div>
+    <p>9th – 12th May, 2026</p>
 </div>
 
 <!-- ABOUT -->
 <div class="container" id="about">
     <div class="card">
         <h2>About</h2>
-        <p>Hands-on training in temporal genomics and ancient DNA analysis.</p>
-
-        <h3>Prerequisites</h3>
-        <ul>
-            <li>Google Colab</li>
-            <li>Laptop + charger</li>
-            <li>Basic command line knowledge</li>
-        </ul>
-    </div>
-</div>
-
-<!-- GETTING THERE -->
-<div class="container" id="getting-there">
-    <div class="card">
-        <h2>Getting There</h2>
-        <p>NCBS, Bangalore</p>
+        <p>Ancient DNA and temporal genomics workshop.</p>
     </div>
 </div>
 
 <!-- SCHEDULE -->
 <div class="container" id="schedule">
     <div class="card">
-        <h2>Schedule</h2>
+        <h2>Workshop Schedule</h2>
 
-        <h3>9th May</h3>
-        <table>
-            <tr><th>Time</th><th>Session</th></tr>
-            <tr><td>9:00–11:00</td><td>Short talks</td></tr>
-            <tr><td>11:30–1:00</td><td>DNA collection</td></tr>
-        </table>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showDay(1)">9th May</button>
+            <button class="tab-btn" onclick="showDay(2)">10th May</button>
+            <button class="tab-btn" onclick="showDay(3)">11th May</button>
+            <button class="tab-btn" onclick="showDay(4)">12th May</button>
+        </div>
 
-        <h3>10th May</h3>
-        <table>
-            <tr><th>Time</th><th>Session</th></tr>
-            <tr><td>9:00–11:00</td><td>Sampling</td></tr>
-        </table>
+        <div class="tab-content" id="day1">
+            <table>
+                <tr><th>Time</th><th>Session</th></tr>
+                <tr><td>9–11</td><td>Talks</td></tr>
+            </table>
+        </div>
+
+        <div class="tab-content" id="day2" style="display:none;">
+            <table>
+                <tr><td>Sampling</td></tr>
+            </table>
+        </div>
+
+        <div class="tab-content" id="day3" style="display:none;">
+            <table>
+                <tr><td>Library prep</td></tr>
+            </table>
+        </div>
+
+        <div class="tab-content" id="day4" style="display:none;">
+            <table>
+                <tr><td>Population genetics</td></tr>
+            </table>
+        </div>
+
     </div>
 </div>
 
-<!-- RESOURCES -->
-<div class="container" id="resources">
-    <div class="card">
-        <h2>Resources</h2>
-        <p>WiFi, facilities, etc.</p>
-    </div>
-</div>
+<script>
+function showDay(day) {
+    let days = document.querySelectorAll(".tab-content");
+    let buttons = document.querySelectorAll(".tab-btn");
 
-<!-- PEOPLE -->
-<div class="container two-column">
-    <div class="card">
-        <h2>Instructors</h2>
-        <ul><li>Katerina</li></ul>
-    </div>
+    days.forEach(d => d.style.display = "none");
+    buttons.forEach(b => b.classList.remove("active"));
 
-    <div class="card">
-        <h2>Organizers</h2>
-        <ul><li>Uma</li></ul>
-    </div>
-</div>
-
-<footer>
-<p>© 2026 Workshop</p>
-</footer>
+    document.getElementById("day" + day).style.display = "block";
+    buttons[day-1].classList.add("active");
+}
+</script>
 
 </body>
 </html>
