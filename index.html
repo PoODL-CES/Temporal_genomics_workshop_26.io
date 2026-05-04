@@ -1,151 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporal Genomics Workshop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temporal Genomics Workshop</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
 
-        /*  NAVBAR */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            background: #020617;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* 🔝 NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #020617;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(59,130,246,0.2);
+}
 
-        .navbar a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
+.navbar a, .dropbtn {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
 
-        .navbar a:hover {
-            color: #3b82f6;
-        }
+.navbar a:hover, .dropbtn:hover {
+    color: #3b82f6;
+}
 
-        /*  HERO */
-        .hero {
-            text-align: center;
-            padding: 60px 20px 30px;
-        }
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e293b;
+    min-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
 
-        .subtitle {
-            opacity: 0.7;
-            margin-bottom: 20px;
-        }
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+    color: #e2e8f0;
+}
 
-        .intro {
-            max-width: 800px;
-            margin: auto;
-            opacity: 0.85;
-            line-height: 1.6;
-        }
+.dropdown-content a:hover {
+    background: #334155;
+}
 
-        /*  BUTTON */
-        .poster-button {
-            text-align: center;
-            margin-top: 25px;
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-        .poster-button button {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            background: #3b82f6;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
 
-        .poster-button button:hover {
-            background: #2563eb;
-        }
+.hero h1 {
+    font-size: 2.8rem;
+}
 
-        /*  CONTENT */
-        .container {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.subtitle {
+    opacity: 0.7;
+}
 
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 30px;
-            transition: 0.3s;
-        }
+.intro {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        }
+/* BUTTON */
+.poster-button {
+    margin-top: 25px;
+}
 
-        /*  TWO COLUMN */
-        .two-column {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.poster-button button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(59,130,246,0.5);
+}
 
-        .two-column .card {
-            flex: 1;
-            min-width: 300px;
-        }
+/* CONTENT */
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            opacity: 0.6;
-        }
-    </style>
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 30px;
+    border: 1px solid rgba(59,130,246,0.2);
+}
+
+h3 {
+    color: #3b82f6;
+}
+
+ul {
+    line-height: 1.6;
+}
+
+/* TWO COLUMN */
+.two-column {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.two-column .card {
+    flex: 1;
+    min-width: 300px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
+}
+</style>
 </head>
 
 <body>
 
-<!--  NAVBAR -->
+<!-- 🔝 NAVBAR -->
 <div class="navbar">
     <a href="#about">About</a>
     <a href="#getting-there">Getting There</a>
     <a href="#schedule">Schedule</a>
     <a href="#poster">Workshop Poster</a>
-    <a href="#resources">Workshop Resources</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Workshop Resources ▾</button>
+        <div class="dropdown-content">
+            <a href="#resources">Facilities</a>
+            <a href="YOUR_COLAB_LINK" target="_blank">Workshop Material</a>
+            <a href="#">Datasets (coming soon)</a>
+        </div>
+    </div>
 </div>
 
-<!--  HERO / INTRO -->
+<!-- HERO -->
 <div class="hero">
     <h1>Temporal Genomics Workshop</h1>
     <p class="subtitle">Ancient DNA • Evolution • Bioinformatics</p>
 
-    <h2>9th – 12th May, 2026</h2>
-    <p>Raspuri, NCBS, TIFR</p>
+    <h2>May 9 – 12, 2026</h2>
+    <p>NCBS, Bangalore</p>
 
     <p class="intro">
-        Explore the rapidly evolving field of temporal genomics through this hands-on workshop.
-        Participants will learn cutting-edge techniques in ancient DNA analysis, sequencing workflows,
-        and bioinformatics pipelines, with a strong focus on reproducibility and evolutionary insights.
+        This hands-on workshop introduces participants to temporal population genomics,
+        focusing on ancient DNA analysis, sequencing workflows, and reproducible
+        bioinformatics pipelines.
     </p>
 
-    <!--  POSTER BUTTON -->
     <div class="poster-button" id="poster">
         <a href="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" target="_blank">
             <button>View Workshop Poster</button>
@@ -153,116 +186,96 @@
     </div>
 </div>
 
-<!--  ABOUT -->
+<!-- ABOUT -->
 <div class="container" id="about">
     <div class="card">
         <h2>About the Workshop</h2>
         <p>
-            Ancient and historical DNA studies are redefining our understanding of the past.
-            These studies are very exciting, but require very careful labwork and analyses.
-            This workshop introduces participants to a reproducible pipeline focused on 
-            ancient DNA analysis, sequencing workflows, and evolutionary insights using modern bioinformatics tools.
+            Ancient DNA studies are transforming our understanding of evolution and population history.
+            This workshop provides hands-on training in analyzing temporal genomic data using modern tools.
         </p>
 
-        <!--  PREREQUISITES -->
-        <h3 style="margin-top: 25px;">Prerequisites</h3>
+        <h3>Prerequisites</h3>
         <ul>
-            <li>Access to a Google Colab account</li>
-            <li>A personal laptop (mandatory for hands-on sessions)</li>
-            <li>Laptop charging cable</li>
-            <li>Basic familiarity with command-line tools (recommended but not mandatory)</li>
+            <li>Google Colab access</li>
+            <li>Personal laptop</li>
+            <li>Charging cable</li>
+            <li>Stable internet connection</li>
+            <li>Basic command-line familiarity (recommended)</li>
         </ul>
     </div>
 </div>
 
+<!-- GETTING THERE -->
 <div class="container" id="getting-there">
     <div class="card">
         <h2>Getting There</h2>
 
-        <p>
-            The workshop will be held at <b>National Centre for Biological Sciences (NCBS), Bangalore</b>.
-        </p>
-
         <h3>Campus Entry</h3>
         <ul>
-            <li>Enter through the NCBS main gate and show your confirmation email</li>
-            <li>Carry a government-issued ID for verification</li>
-            <li>Security personnel will guide you if needed</li>
+            <li>Show confirmation email at the gate</li>
+            <li>Carry government ID</li>
         </ul>
 
-        <h3>Travel Instructions</h3>
-        <p><b>By Train:</b> Take a prepaid auto or cab to NCBS, GKVK, Bellary Road.</p>
+        <h3>Travel</h3>
+        <p><b>Train:</b> Auto/cab to NCBS, GKVK Road</p>
+        <p><b>Airport:</b> Cab or Vayu Vajra bus → GKVK stop</p>
+    </div>
+</div>
 
-        <p><b>By Airport:</b></p>
+<!-- ACCOMMODATION -->
+<div class="container">
+    <div class="card">
+        <h2>Accommodation</h2>
+        <p>Parijata Guest House (May 8–13)</p>
         <ul>
-            <li>Use cab services or prepaid airport taxis</li>
-            <li>Take Vayu Vajra airport bus and get down at <b>GKVK Bus Stop</b></li>
-            <li>NCBS campus is across the road</li>
+            <li>Report at Champaka Office</li>
+            <li>Bring toiletries & essentials</li>
         </ul>
     </div>
 </div>
 
+<!-- SCHEDULE -->
 <div class="container" id="schedule">
     <div class="card">
         <h2>Schedule</h2>
 
-        <p><b>Workshop Dates:</b> May 9 – 12, 2026</p>
+        <p><b>Registration:</b> May 9, 8:00 AM</p>
+        <p><b>Sessions:</b> 9:00 AM – 7:00 PM</p>
 
-        <h3>Registration</h3>
-        <p>Starts at 8:00 AM on May 9 at NCBS Reception</p>
-
-        <h3>Session Timings</h3>
-        <p>9:00 AM – 7:00 PM at Raspuri Hall (near Southern Laboratory Complex)</p>
-
-        <h3>Meal Timings</h3>
+        <h3>Meals</h3>
         <ul>
-            <li>Breakfast: 08:30 – 09:30 AM</li>
-            <li>Lunch: 12:45 – 01:45 PM</li>
-            <li>Dinner: 07:15 – 08:30 PM (except May 12)</li>
+            <li>Breakfast: 08:30 – 09:30</li>
+            <li>Lunch: 12:45 – 01:45</li>
+            <li>Dinner: 07:15 – 08:30</li>
         </ul>
-
-        <p>
-            A detailed day-wise schedule will be shared with participants.
-        </p>
     </div>
 </div>
+
+<!-- RESOURCES -->
 <div class="container" id="resources">
     <div class="card">
         <h2>Workshop Resources & Facilities</h2>
 
-        <h3>Facilities Available</h3>
+        <h3>Facilities</h3>
         <ul>
-            <li>WiFi access (available at registration desk)</li>
-            <li>Medical support (contact NCBS Reception)</li>
-            <li>Laundry services (via Guest House)</li>
-            <li>Gym, swimming pool, and sports complex (with badge)</li>
+            <li>WiFi</li>
+            <li>Medical support</li>
+            <li>Laundry</li>
+            <li>Gym & sports complex</li>
         </ul>
 
-        <h3>Food Arrangements</h3>
-        <p>
-            Breakfast and lunch will be provided at the NCBS Main Canteen.
-            Dinner is provided on all workshop days except May 12.
-        </p>
-
-        <h3>Important Guidelines</h3>
+        <h3>Guidelines</h3>
         <ul>
-            <li>Wear your name badge at all times</li>
-            <li>Follow NCBS anti-harassment policy</li>
-            <li>Return name tags after the event</li>
-            <li>Bring reusable water bottles (sustainability initiative)</li>
+            <li>Wear badge</li>
+            <li>Follow anti-harassment policy</li>
+            <li>Bring reusable water bottle</li>
         </ul>
-
-        <h3>Emergency Contacts</h3>
-        <p>
-            NCBS Reception (24/7): (080) 2366 6001/02/18/19<br>
-            Meetings Office: +91-80-23666337
-        </p>
     </div>
 </div>
 
-<!--  PEOPLE -->
+<!-- PEOPLE -->
 <div class="container two-column">
-
     <div class="card">
         <h2>Instructors</h2>
         <ul>
@@ -270,8 +283,6 @@
             <li>Niraj Rai</li>
             <li>Kritika M Garg</li>
             <li>Anubhab Khan</li>
-            <li>German Hernandez Alonso</li>
-            <li>Priya Moorjani (online)</li>
         </ul>
     </div>
 
@@ -279,16 +290,13 @@
         <h2>Organizers</h2>
         <ul>
             <li>Uma Ramakrishnan</li>
-            <li>Kritika M Garg</li>
-            <li>Anubhab Khan</li>
             <li>Devkant Singha</li>
         </ul>
     </div>
-
 </div>
 
 <footer>
-    <p>© 2026 Temporal Genomics Workshop</p>
+<p>© 2026 Temporal Genomics Workshop</p>
 </footer>
 
 </body>
