@@ -13,27 +13,56 @@
             color: #e2e8f0;
         }
 
-        /* 🎬 VIDEO */
-        .video-container {
-            padding: 40px 20px 20px;
+        /* 🔝 NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: #020617;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #3b82f6;
+        }
+
+        /* 🧬 HERO */
+        .hero {
             text-align: center;
+            padding: 60px 20px 30px;
         }
 
-        .video-container video {
-            width: 100%;
-            max-width: 900px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
         }
 
-        /* 🔘 POSTER BUTTON */
+        .subtitle {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: auto;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* 🔘 BUTTON */
         .poster-button {
             text-align: center;
-            margin-top: 20px;
-        }
-
-        .poster-button a {
-            text-decoration: none;
+            margin-top: 25px;
         }
 
         .poster-button button {
@@ -49,22 +78,6 @@
 
         .poster-button button:hover {
             background: #2563eb;
-        }
-
-        /* 🧬 TITLE */
-        .hero {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            opacity: 0.7;
-            margin-bottom: 15px;
         }
 
         /* 📄 CONTENT */
@@ -109,43 +122,79 @@
 
 <body>
 
-<!-- 🎬 VIDEO -->
-<div class="video-container">
-    <video autoplay muted loop playsinline controls>
-        <source src="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/Temporal%20Genomics%20Workshop.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- 🔘 BUTTON RIGHT BELOW VIDEO -->
-    <div class="poster-button">
-        <a href="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" target="_blank">
-            <button>View Workshop Poster</button>
-        </a>
-    </div>
+<!-- 🔝 NAVBAR -->
+<div class="navbar">
+    <a href="#about">About</a>
+    <a href="#getting-there">Getting There</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#poster">Workshop Poster</a>
+    <a href="#resources">Workshop Resources</a>
 </div>
 
-<!-- 🧬 TITLE -->
+<!-- 🧬 HERO / INTRO -->
 <div class="hero">
     <h1>Temporal Genomics Workshop</h1>
     <p class="subtitle">Ancient DNA • Evolution • Bioinformatics</p>
 
     <h2>9th – 12th May, 2026</h2>
     <p>Raspuri, NCBS, TIFR</p>
+
+    <p class="intro">
+        Explore the rapidly evolving field of temporal genomics through this hands-on workshop.
+        Participants will learn cutting-edge techniques in ancient DNA analysis, sequencing workflows,
+        and bioinformatics pipelines, with a strong focus on reproducibility and evolutionary insights.
+    </p>
+
+    <!-- 🔘 POSTER BUTTON -->
+    <div class="poster-button" id="poster">
+        <a href="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" target="_blank">
+            <button>View Workshop Poster</button>
+        </a>
+    </div>
 </div>
 
 <!-- 📖 ABOUT -->
-<div class="container">
-
+<div class="container" id="about">
     <div class="card">
         <h2>About the Workshop</h2>
         <p>
             Ancient and historical DNA studies are redefining our understanding of the past.
             These studies are very exciting, but require very careful labwork and analyses.
-            This workshop introduces participants to a reproducible pipeline which focuses on 
+            This workshop introduces participants to a reproducible pipeline focused on 
             ancient DNA analysis, sequencing workflows, and evolutionary insights using modern bioinformatics tools.
         </p>
     </div>
+</div>
 
+<!-- 📍 GETTING THERE -->
+<div class="container" id="getting-there">
+    <div class="card">
+        <h2>Getting There</h2>
+        <p>
+            The workshop will be held at NCBS, TIFR, Bangalore. Detailed directions, transport options,
+            and campus entry information will be shared with participants prior to the workshop.
+        </p>
+    </div>
+</div>
+
+<!-- 🗓️ SCHEDULE -->
+<div class="container" id="schedule">
+    <div class="card">
+        <h2>Schedule</h2>
+        <p>
+            A detailed schedule including lectures, hands-on sessions, and discussions will be provided soon.
+        </p>
+    </div>
+</div>
+
+<!-- 📂 RESOURCES -->
+<div class="container" id="resources">
+    <div class="card">
+        <h2>Workshop Resources</h2>
+        <p>
+            All workshop materials including datasets, pipelines, and documentation will be shared here.
+        </p>
+    </div>
 </div>
 
 <!-- 👩‍🔬 PEOPLE -->
@@ -154,22 +203,22 @@
     <div class="card">
         <h2>Instructors</h2>
         <ul>
-            <li>Katerina Guschanski, University of Edinburgh</li>
-            <li>Niraj Rai, Birbal Sahani Institute of Paleobotony</li>
-            <li>Kritika M Garg, IISER Mohali</li>
-            <li>Anubhab Khan, IISc</li>
-            <li>German Hernandez Alonso, University of Edinburgh</li>
-            <li>Priya Moorjani (online), UC Berkeley</li>
+            <li>Katerina Guschanski</li>
+            <li>Niraj Rai</li>
+            <li>Kritika M Garg</li>
+            <li>Anubhab Khan</li>
+            <li>German Hernandez Alonso</li>
+            <li>Priya Moorjani (online)</li>
         </ul>
     </div>
 
     <div class="card">
         <h2>Organizers</h2>
         <ul>
-            <li>Uma Ramakrishnan, NCBS</li>
-            <li>Kritika M Garg, IISER Mohali</li>
-            <li>Anubhab Khan, IISc</li>
-            <li>Devkant Singha, NCBS</li>
+            <li>Uma Ramakrishnan</li>
+            <li>Kritika M Garg</li>
+            <li>Anubhab Khan</li>
+            <li>Devkant Singha</li>
         </ul>
     </div>
 
