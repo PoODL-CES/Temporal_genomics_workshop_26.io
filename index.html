@@ -36,6 +36,7 @@ body {
     color: #3b82f6;
 }
 
+/* DROPDOWN */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -70,9 +71,26 @@ body {
     color: #3b82f6;
 }
 
+/* SHOW DROPDOWN */
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* COLAB BUTTON */
+.colab-btn {
+    background-color: #f9ab00;
+    color: black !important;
+    font-weight: 600;
+    border-radius: 6px;
+    margin: 8px;
+    text-align: center;
+}
+
+.colab-btn:hover {
+    background-color: #e69500;
+    color: black !important;
+}
+
 /* HERO */
 .hero {
     text-align: center;
@@ -216,13 +234,18 @@ function openTab(day) {
         <div class="dropdown-content">
             <a href="https://poodl-ces.github.io/PoODL_NGS_workshop.io/linux_basics.html" target="_blank">Linux Basic Exercise</a>
             <a href="https://poodl-ces.github.io/PoODL_NGS_workshop.io/linux_advance.html" target="_blank">Linux Advanced Exercise</a>
-            <a href="https://github.com/PoODL-CES/Temporal_genomics/blob/main/TGW_2026.ipynb" target="_blank">Google Colab</a>
+            
+            <a href="https://colab.research.google.com/github/PoODL-CES/Temporal_genomics/blob/main/TGW_2026.ipynb" 
+               target="_blank" 
+               class="colab-btn">
+                Open in Google Colab
+            </a>
+
             <a href="#">Answer Key</a>
         </div>
     </div>
 
 </div>
-
 <!-- HERO -->
 <div class="hero">
     <h1>Temporal Genomics Workshop</h1>
