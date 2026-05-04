@@ -13,7 +13,7 @@ body {
     color: #e2e8f0;
 }
 
-/* NAVBAR */
+/* 🔝 NAVBAR */
 .navbar {
     display: flex;
     justify-content: center;
@@ -22,14 +22,22 @@ body {
     padding: 15px;
     position: sticky;
     top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(59,130,246,0.2);
 }
 
 .navbar a, .dropbtn {
     color: #e2e8f0;
     text-decoration: none;
+    font-weight: 500;
     background: none;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
+}
+
+.navbar a:hover, .dropbtn:hover {
+    color: #3b82f6;
 }
 
 /* DROPDOWN */
@@ -43,11 +51,17 @@ body {
     background-color: #1e293b;
     min-width: 220px;
     border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .dropdown-content a {
     display: block;
-    padding: 10px;
+    padding: 12px;
+    color: #e2e8f0;
+}
+
+.dropdown-content a:hover {
+    background: #334155;
 }
 
 .dropdown:hover .dropdown-content {
@@ -57,35 +71,80 @@ body {
 /* HERO */
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 60px 20px 30px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+}
+
+.subtitle {
+    opacity: 0.7;
+}
+
+.intro {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.poster-button {
+    margin-top: 25px;
+}
+
+.poster-button button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(59,130,246,0.5);
 }
 
 /* CONTENT */
 .container {
+    padding: 20px;
     max-width: 1000px;
     margin: auto;
-    padding: 20px;
 }
 
 .card {
     background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 30px;
+    border: 1px solid rgba(59,130,246,0.2);
+}
+
+h3 {
+    color: #3b82f6;
+}
+
+ul {
+    line-height: 1.6;
+}
+
+/* TWO COLUMN */
+.two-column {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.two-column .card {
+    flex: 1;
+    min-width: 300px;
+}
+
+footer {
+    text-align: center;
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
+    opacity: 0.6;
 }
 
-/* TABLE */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    border-bottom: 1px solid #334155;
-}
-
-/* TABS */
+/* 🔵 TABS (minimal add) */
 .tabs {
     margin-bottom: 15px;
 }
@@ -108,26 +167,22 @@ th, td {
 
 <body>
 
-<!-- NAVBAR -->
+<!-- 🔝 NAVBAR -->
 <div class="navbar">
     <a href="#about">About</a>
     <a href="#getting-there">Getting There</a>
     <a href="#schedule">Schedule</a>
     <a href="#poster">Workshop Poster</a>
 
+    <!-- ✅ FIXED DROPDOWN -->
     <div class="dropdown">
         <button class="dropbtn">Workshop Resources ▾</button>
 
         <div class="dropdown-content">
             <a href="#resources">Facilities</a>
 
-            <!-- YOUR LINK -->
             <a href="https://github.com/PoODL-CES/Temporal_genomics" target="_blank">
                 Workshop Material (GitHub)
-            </a>
-
-            <a href="YOUR_COLAB_LINK" target="_blank">
-                Run on Google Colab
             </a>
 
             <a href="#">Datasets (coming soon)</a>
@@ -138,18 +193,46 @@ th, td {
 <!-- HERO -->
 <div class="hero">
     <h1>Temporal Genomics Workshop</h1>
-    <p>9th – 12th May, 2026</p>
+    <p class="subtitle">Ancient DNA • Evolution • Bioinformatics</p>
+
+    <h2>9th – 12th May, 2026</h2>
+    <p>Raspuri, NCBS, TIFR</p>
+
+    <p class="intro">
+        Explore the rapidly evolving field of temporal genomics through this hands-on workshop.
+        Participants will learn cutting-edge techniques in ancient DNA analysis, sequencing workflows,
+        and bioinformatics pipelines, with a strong focus on reproducibility and evolutionary insights.
+    </p>
+
+    <div class="poster-button" id="poster">
+        <a href="https://raw.githubusercontent.com/PoODL-CES/Temporal_genomics_workshop_26.io/main/SR_1.png" target="_blank">
+            <button>View Workshop Poster</button>
+        </a>
+    </div>
 </div>
 
 <!-- ABOUT -->
 <div class="container" id="about">
     <div class="card">
-        <h2>About</h2>
-        <p>Ancient DNA and temporal genomics workshop.</p>
+        <h2>About the Workshop</h2>
+        <p>
+            Ancient and historical DNA studies are redefining our understanding of the past.
+            These studies are very exciting, but require very careful labwork and analyses.
+            This workshop introduces participants to a reproducible pipeline focused on 
+            ancient DNA analysis, sequencing workflows, and evolutionary insights using modern bioinformatics tools.
+        </p>
+
+        <h3 style="margin-top: 25px;">Prerequisites</h3>
+        <ul>
+            <li>Access to a Google Colab account</li>
+            <li>A personal laptop (mandatory for hands-on sessions)</li>
+            <li>Laptop charging cable</li>
+            <li>Basic familiarity with command-line tools (recommended but not mandatory)</li>
+        </ul>
     </div>
 </div>
 
-<!-- SCHEDULE -->
+<!-- SCHEDULE (TABBED) -->
 <div class="container" id="schedule">
     <div class="card">
         <h2>Workshop Schedule</h2>
@@ -161,29 +244,24 @@ th, td {
             <button class="tab-btn" onclick="showDay(4)">12th May</button>
         </div>
 
+        <!-- DAY 1 -->
         <div class="tab-content" id="day1">
-            <table>
-                <tr><th>Time</th><th>Session</th></tr>
-                <tr><td>9–11</td><td>Talks</td></tr>
-            </table>
+            <p><b>Short research talks → DNA collection → DNA degradation → Insights → Lab walkthrough → Dinner</b></p>
         </div>
 
+        <!-- DAY 2 -->
         <div class="tab-content" id="day2" style="display:none;">
-            <table>
-                <tr><td>Sampling</td></tr>
-            </table>
+            <p><b>Sampling → Extraction → Qiagen session → Flash talks → Linux refresher</b></p>
         </div>
 
+        <!-- DAY 3 -->
         <div class="tab-content" id="day3" style="display:none;">
-            <table>
-                <tr><td>Library prep</td></tr>
-            </table>
+            <p><b>Talk → Extraction finish → Library prep → Authentication</b></p>
         </div>
 
+        <!-- DAY 4 -->
         <div class="tab-content" id="day4" style="display:none;">
-            <table>
-                <tr><td>Population genetics</td></tr>
-            </table>
+            <p><b>Mitogenomes → SNP calling → Population genetics → Debrief</b></p>
         </div>
 
     </div>
